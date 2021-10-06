@@ -11,6 +11,7 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define TAPTERM 200
+#define TAPHOLDFLAVOR "tap-preferred"
 #define COMBOTERM 22
 
 #define SEMIMAK  0
@@ -31,9 +32,19 @@
             label = "LAYER_STICKY_TAP";
             #binding-cells = <2>;
             tapping-term-ms = <TAPTERM>;
-            quick_tap_ms = <-1>;
-            flavor = "tap-preferred";
+            //quick_tap_ms = <-1>;
+            flavor = TAPHOLDFLAVOR;
             bindings = <&mo>, <&sk>;
+        };
+
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_STICKY_TAP";
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPTERM>;
+            //quick_tap_ms = <-1>;
+            flavor = TAPHOLDFLAVOR;
+            bindings = <&kp>, <&kp>;
         };
     };
 
@@ -49,7 +60,7 @@
 // '-----------------\ RET | SPC | BSP |   | SFT | REP | ESC /-----------------'
             bindings = <
     &none  &kp F       &kp L          &kp H          &kp V        &kp Z            &kp Q     &kp W          &kp U      &kp O    &kp Y     &none
-    &none  &mt LGUI S  &mt LCTRL R    &mt LSHFT N    &mt LALT T   &kp K            &kp C     &mt LALT D     &mt LSHFT E  &mt LCTRL A  &mt LGUI I  &none
+    &none  &hm LGUI S  &hm LCTRL R    &hm LSHFT N    &hm LALT T   &kp K            &kp C     &hm LALT D     &hm LSHFT E  &hm LCTRL A  &hm LGUI I  &none
     &none  &kp X       &kp SQT        &kp B          &kp M        &kp J            &kp P     &kp G          &kp COMMA  &kp DOT  &kp FSLH  &none
                        &lt MEDIA RET  &lt NAV SPACE  &kp BSPC     &lst SYMS LSHFT  &mo NUMS  &lt FKEYS ESC
             >;
@@ -64,9 +75,9 @@
 // '-----------------\ RET | SPC | BSP |   | SFT | REP | ESC /-----------------'
             bindings = <
     &none  &kp Q       &kp W          &kp E          &kp R        &kp T            &kp Y     &kp U          &kp I        &kp O        &kp P         &none
-    &none  &mt LGUI A  &mt LCTRL S    &mt LSHFT D    &mt LALT F   &kp G            &kp H     &mt LALT J     &mt LSHFT K  &mt LCTRL L  &mt LGUI SQT  &none
+    &none  &hm LGUI A  &hm LCTRL S    &hm LSHFT D    &hm LALT F   &kp G            &kp H     &hm LALT J     &hm LSHFT K  &hm LCTRL L  &hm LGUI SQT  &none
     &none  &kp Z       &kp X          &kp C          &kp V        &kp B            &kp N     &kp M          &kp COMMA    &kp DOT      &kp FSLH      &none
-                       &lt MEDIA RET  &lt NAV SPACE  &kp BSPC     &lst SYMS LSFHT  &mo NUMS  &lt FKEYS ESC
+                       &lt MEDIA RET  &lt NAV SPACE  &kp BSPC     &lst SYMS LSHFT  &mo NUMS  &lt FKEYS ESC
             >;
         };
 
@@ -78,10 +89,10 @@
 // |     |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |     |
 // '-----------------\ RET | SPC | BSP |   | SFT | REP | ESC /-----------------'
             bindings = <
-    &kp ESC    &kp Q  &kp W    &kp E      &kp R      &kp T      &kp Y      &kp U   &kp I      &kp O    &kp P     &none
-    &kp LSHFT  &kp A  &kp S    &kp D      &kp F      &kp G      &kp H      &kp J   &kp K      &kp L    &kp SQT   &none
-    &kp LCTRL  &kp Z  &kp X    &kp C      &kp V      &kp B      &kp N      &kp M   &kp COMMA  &kp DOT  &kp FSLH  &none
-                      &kp TAB  &kp SPACE  &mo GNUMS  &sk LSHFT  &kp LALTK  &kp RET
+    &kp ESC    &kp Q  &kp W    &kp E      &kp R      &kp T      &kp Y     &kp U   &kp I      &kp O    &kp P     &none
+    &kp LSHFT  &kp A  &kp S    &kp D      &kp F      &kp G      &kp H     &kp J   &kp K      &kp L    &kp SQT   &none
+    &kp LCTRL  &kp Z  &kp X    &kp C      &kp V      &kp B      &kp N     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &none
+                      &kp TAB  &kp SPACE  &mo GNUMS  &sk LSHFT  &kp LALT  &kp RET
             >;
         };
 
@@ -157,7 +168,7 @@
 // '-----------------\     |     |     |   | mute| play|     /-----------------'
             bindings = <
     &none  &none     &none      &none      &none     &none  &none       &none             &none         &none       &none  &none
-    &none  &kp LGUI  &kp LCTRL  &kp LSHFT  &kp LALT  &none  &kp K_PREV  &kp K_VOL_DOWN    &kp K_VOL_UP  &kp K_NEXT  &none  &none
+    &none  &kp LGUI  &kp LCTRL  &kp LSHFT  &kp LALT  &none  &kp K_PREV  &kp K_VOL_DN      &kp K_VOL_UP  &kp K_NEXT  &none  &none
     &none  &none     &none      &none      &none     &none  &none       &none             &none         &none       &none  &none
                                 &none      &none     &none  &kp K_MUTE  &kp K_PLAY_PAUSE  &none
             >;
