@@ -1,0 +1,229 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *               2021 Niclas Meyer
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define TAPTERM 200
+#define COMBOTERM 22
+
+#define SEMIMAK  0
+#define QWERTY   1
+#define GAME     2
+#define NUMS     3
+#define SYMS     4
+#define FKEYS    5
+#define NAV      6
+#define MEDIA    7
+#define GNUMS    8
+#define CONFIG   9
+
+/ {
+    behaviors {
+        lst: layer_sticky_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_STICKY_TAP";
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPTERM>;
+            quick_tap_ms = <-1>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&sk>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        semimak_layer {
+            label = "SEMI";
+// .-----------------------------------.   .-----------------------------------.
+// |     |  F  |  L  |  H  |  V  |  Z  |   |  Q  |  W  |  U  |  O  |  Y  |     |
+// |     |  S  |  R  |  N  |  T  |  K  |   |  C  |  D  |  E  |  A  |  I  |     |
+// |     |  X  |  '  |  B  |  M  |  J  |   |  P  |  G  |  ,  |  .  |  /  |     |
+// '-----------------\ RET | SPC | BSP |   | SFT | REP | ESC /-----------------'
+            bindings = <
+    &none  &kp F       &kp L          &kp H          &kp V        &kp Z            &kp Q     &kp W          &kp U      &kp O    &kp Y     &none
+    &none  &mt LGUI S  &mt LCTRL R    &mt LSHFT N    &mt LALT T   &kp K            &kp C     &mt LALT D     &mt LSHFT E  &mt LCTRL A  &mt LGUI I  &none
+    &none  &kp X       &kp SQT        &kp B          &kp M        &kp J            &kp P     &kp G          &kp COMMA  &kp DOT  &kp FSLH  &none
+                       &lt MEDIA RET  &lt NAV SPACE  &kp BSPC     &lst SYMS LSHFT  &mo NUMS  &lt FKEYS ESC
+            >;
+        };
+
+        qwerty_layer {
+            label = "QWERTY";
+// .-----------------------------------.   .-----------------------------------.
+// |     |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |     |
+// |     |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  '  |     |
+// |     |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |     |
+// '-----------------\ RET | SPC | BSP |   | SFT | REP | ESC /-----------------'
+            bindings = <
+    &none  &kp Q       &kp W          &kp E          &kp R        &kp T            &kp Y     &kp U          &kp I        &kp O        &kp P         &none
+    &none  &mt LGUI A  &mt LCTRL S    &mt LSHFT D    &mt LALT F   &kp G            &kp H     &mt LALT J     &mt LSHFT K  &mt LCTRL L  &mt LGUI SQT  &none
+    &none  &kp Z       &kp X          &kp C          &kp V        &kp B            &kp N     &kp M          &kp COMMA    &kp DOT      &kp FSLH      &none
+                       &lt MEDIA RET  &lt NAV SPACE  &kp BSPC     &lst SYMS LSFHT  &mo NUMS  &lt FKEYS ESC
+            >;
+        };
+
+        game_layer {
+            label = "GAME";
+// .-----------------------------------.   .-----------------------------------.
+// |     |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |     |
+// |     |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  '  |     |
+// |     |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |     |
+// '-----------------\ RET | SPC | BSP |   | SFT | REP | ESC /-----------------'
+            bindings = <
+    &kp ESC    &kp Q  &kp W    &kp E      &kp R      &kp T      &kp Y      &kp U   &kp I      &kp O    &kp P     &none
+    &kp LSHFT  &kp A  &kp S    &kp D      &kp F      &kp G      &kp H      &kp J   &kp K      &kp L    &kp SQT   &none
+    &kp LCTRL  &kp Z  &kp X    &kp C      &kp V      &kp B      &kp N      &kp M   &kp COMMA  &kp DOT  &kp FSLH  &none
+                      &kp TAB  &kp SPACE  &mo GNUMS  &sk LSHFT  &kp LALTK  &kp RET
+            >;
+        };
+
+        nums_layer {
+            label = "NUMS";
+// .-----------------------------------.   .-----------------------------------.
+// |     |     |  7  |  8  |  9  |     |   |     |     |     |     |     |     |
+// |     |     |  4  |  5  |  6  |     |   |     | ALT | SHFT| CTRL| GUI |     |
+// |     |     |  1  |  2  |  3  |     |   |     |     |     |     |     |     |
+// '-----------------\     |  0  |  .  |   |     |     |     /-----------------'
+            bindings = <
+    &none  &none  &kp 7  &kp 8  &kp 9  &none   &none  &none     &none      &none      &none     &none
+    &none  &none  &kp 4  &kp 5  &kp 6  &none   &none  &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &none
+    &none  &none  &kp 1  &kp 2  &kp 3  &none   &none  &none     &none      &none      &none     &none
+                         &none  &kp 0  &kp DOT &none  &none     &none
+            >;
+        };
+
+        syms_layer {
+            label = "SYMS";
+            // TODO: populate symbol layer
+            // []{}()
+            // `~!@#$%^&*-_=+;:\|
+// .-----------------------------------.   .-----------------------------------.
+// |     |     |     |     |     |     |   |     |     |     |     |     |     |
+// |     |     |     |     |     |     |   |     | ALT | SHFT| CTRL| GUI |     |
+// |     |     |     |     |     |     |   |     |     |     |     |     |     |
+// '-----------------\     |     |     |   |     |     |     /-----------------'
+            bindings = <
+    &none  &none  &none  &none  &none  &none  &none  &none     &none      &none      &none     &none
+    &none  &none  &none  &none  &none  &none  &none  &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &none
+    &none  &none  &none  &none  &none  &none  &none  &none     &none      &none      &none     &none
+                         &none  &none  &none  &none  &none     &none
+            >;
+        };
+
+        fkeys_layer {
+            label = "FKEYS";
+// .-----------------------------------.   .-----------------------------------.
+// |     | F10 |  F7 |  F8 |  F9 |insrt|   |     |     |     |     |     |     |
+// |     | F11 |  F4 |  F5 |  F6 |prtsc|   |     | ALT | SHFT| CTRL| GUI |     |
+// |     | F12 |  F1 |  F2 |  F3 |scrlk|   |     |     |     |     |     |     |
+// '-----------------\     | caps|pause|   |     |     |     /-----------------'
+            bindings = <
+    &none  &kp F10  &kp F7  &kp F8  &kp F9    &kp INS          &none  &none     &none      &none      &none     &none
+    &none  &kp F11  &kp F4  &kp F5  &kp F6    &kp PSCRN        &none  &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &none
+    &none  &kp F12  &kp F1  &kp F2  &kp F3    &kp SLCK         &none  &none     &none      &none      &none     &none
+                            &none   &kp CAPS  &kp PAUSE_BREAK  &none  &none     &none
+            >;
+        };
+
+        nav_layer {
+            label = "NAV";
+// .-----------------------------------.   .-----------------------------------.
+// |     |     |     |     |     |     |   |     |     |     |     |     |     |
+// |     | GUI | CTRL| SHFT| ALT |     |   | LEFT| DOWN|  UP |RIGHT|     |     |
+// |     |     |     |     |     |     |   |     | pgup| pgdn| home| end |     |
+// '-----------------\     |     |     |   |     |     |     /-----------------'
+            bindings = <
+    &none  &none     &none      &none      &none     &none  &none     &none     &none   &none      &none  &none
+    &none  &kp LGUI  &kp LCTRL  &kp LSHFT  &kp LALT  &none  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none  &none
+    &none  &none     &none      &none      &none     &none  &none     &none     &none   &none      &none  &none
+                                &none      &none     &none  &none     &none     &none
+            >;
+        };
+
+        media_layer {
+            label = "MEDIA";
+// .-----------------------------------.   .-----------------------------------.
+// |     |     |     |     |     |     |   |     |     |     |     |     |     |
+// |     | GUI | CTRL| SHFT| ALT |     |   | prev|voldn|volup| next|     |     |
+// |     |     |     |     |     |     |   |     |     |     |     |     |     |
+// '-----------------\     |     |     |   | mute| play|     /-----------------'
+            bindings = <
+    &none  &none     &none      &none      &none     &none  &none       &none             &none         &none       &none  &none
+    &none  &kp LGUI  &kp LCTRL  &kp LSHFT  &kp LALT  &none  &kp K_PREV  &kp K_VOL_DOWN    &kp K_VOL_UP  &kp K_NEXT  &none  &none
+    &none  &none     &none      &none      &none     &none  &none       &none             &none         &none       &none  &none
+                                &none      &none     &none  &kp K_MUTE  &kp K_PLAY_PAUSE  &none
+            >;
+        };
+
+        gnums_layer {
+            label = "GNUMS";
+// .-----------------------------------.   .-----------------------------------.
+// |     |     |     |     |     |     |   |     |     |     |     |     |     |
+// |  1  |  2  |  3  |  4  |  5  |     |   |     |     |     |     |     |     |
+// |  6  |  7  |  8  |  9  |  0  |     |   |     |     |     |     |     |     |
+// '-----------------\     |     |     |   |     |     |     /-----------------'
+            bindings = <
+    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+    &kp 1  &kp 2  &kp 3  &kp 4  &kp 5  &none  &none  &none  &none  &none  &none  &none
+    &kp 6  &kp 7  &kp 8  &kp 9  &kp 0  &none  &none  &none  &none  &none  &none  &none
+                         &none  &none  &none  &none  &none  &none
+            >;
+        };
+
+        config_layer {
+            label = "CONFIG";
+            // TODO: change base layer
+            // TODO: access config layer
+// .-----------------------------------.   .-----------------------------------.
+// |bootl|reset| USB | BLE |     |     |   |     |     |     |     |     |     |
+// |btclr| BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |     |     |     |     |
+// |     |     |     |     |     |     |   |     |     |     |     |     |     |
+// '-----------------\     |     |     |   |     |     |     /-----------------'
+            bindings = <
+    &bootloader  &reset        &out OUT_USB  &out OUT_BLE  &none         &none         &none  &none  &none  &none  &none  &none
+    &bt BT_CLR   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5  &none  &none  &none  &none  &none  &none
+    &none        &none         &none         &none         &none         &none         &none  &none  &none  &none  &none  &none
+                                             &none         &none         &none         &none  &none  &none
+            >;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+        combo_tab {
+            timeout-ms = <COMBOTERM>;
+            key-positions = <2 3>;
+            bindings = <&kp TAB>;
+            layers = <SEMIMAK>;
+        };
+
+        combo_copy {
+            timeout-ms = <COMBOTERM>;
+            key-positions = <27 28>;
+            bindings = <&kp K_COPY>;
+            layers = <SEMIMAK>;
+        };
+
+        combo_cut {
+            timeout-ms = <COMBOTERM>;
+            key-positions = <27 29>;
+            bindings = <&kp K_CUT>;
+            layers = <SEMIMAK>;
+        };
+
+        combo_paste {
+            timeout-ms = <COMBOTERM>;
+            key-positions = <28 29>;
+            bindings = <&kp K_PASTE>;
+            layers = <SEMIMAK>;
+        };
+    };
+};
