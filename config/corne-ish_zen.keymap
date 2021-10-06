@@ -99,33 +99,30 @@
         nums_layer {
             label = "NUMS";
 // .-----------------------------------.   .-----------------------------------.
-// |     |     |  7  |  8  |  9  |     |   |     |     |     |     |     |     |
-// |     |     |  4  |  5  |  6  |     |   |     | ALT | SHFT| CTRL| GUI |     |
-// |     |     |  1  |  2  |  3  |     |   |     |     |     |     |     |     |
-// '-----------------\     |  0  |  .  |   |     |     |     /-----------------'
+// |     |  *  |  7  |  8  |  9  |     |   |     |     |     |     |     |     |
+// |     |  0  |  4  |  5  |  6  |  %  |   |     | ALT | SHFT| CTRL| GUI |     |
+// |     |  +  |  1  |  2  |  3  |  $  |   |     |     |     |     |  /  |     |
+// '-----------------\  |  |  -  |  .  |   |     |     |     /-----------------'
             bindings = <
-    &none  &none  &kp 7  &kp 8  &kp 9  &none   &none  &none     &none      &none      &none     &none
-    &none  &none  &kp 4  &kp 5  &kp 6  &none   &none  &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &none
-    &none  &none  &kp 1  &kp 2  &kp 3  &none   &none  &none     &none      &none      &none     &none
-                         &none  &kp 0  &kp DOT &none  &none     &none
+    &none  &kp STAR  &kp 7  &kp 8  &kp 9      &none        &none  &none     &none      &none      &none     &none
+    &none  &kp 0     &kp 4  &kp 5  &kp 6      &kp PERCENT  &none  &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &none
+    &none  &kp PLUS  &kp 1  &kp 2  &kp 3      &kp DOLLAR   &none  &none     &none      &none      &kp FSLH  &none
+                         &kp PIPE  &kp MINUS  &kp DOT      &none  &none     &none
             >;
         };
 
         syms_layer {
             label = "SYMS";
-            // TODO: populate symbol layer
-            // []{}()
-            // `~!@#$%^&*-_=+;:\|
 // .-----------------------------------.   .-----------------------------------.
-// |     |     |     |     |     |     |   |     |     |     |     |     |     |
-// |     |     |     |     |     |     |   |     | ALT | SHFT| CTRL| GUI |     |
-// |     |     |     |     |     |     |   |     |     |     |     |     |     |
-// '-----------------\     |     |     |   |     |     |     /-----------------'
+// |     |  ~  |  ^  |  #  |  [  |  ]  |   |     |     |     |     |     |     |
+// |     |  :  |  ?  |  !  |  (  |  )  |   |     | ALT | SHFT| CTRL| GUI |     |
+// |     |  `  |  &  |  =  |  {  |  }  |   |     |     |     |     |     |     |
+// '-----------------\  \  |  _  |  @  |   |     |     |     /-----------------'
             bindings = <
-    &none  &none  &none  &none  &none  &none  &none  &none     &none      &none      &none     &none
-    &none  &none  &none  &none  &none  &none  &none  &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &none
-    &none  &none  &none  &none  &none  &none  &none  &none     &none      &none      &none     &none
-                         &none  &none  &none  &none  &none     &none
+    &none  &kp TILDE  &kp CARET  &kp HASH   &kp LBKT   &kp RBKT  &none  &none     &none      &none      &none     &none
+    &none  &kp COLON  &kp QMARK  &kp EXCL   &kp LPAR   &kp RPAR  &none  &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &none
+    &none  &kp GRAVE  &kp AMPS   &kp EQUAL  &kp LBRC   &kp RBRC  &none  &none     &none      &none      &none     &none
+                                 &kp BSLH   &kp UNDER  &kp AT    &none  &none     &none
             >;
         };
 
@@ -211,28 +208,35 @@
             timeout-ms = <COMBOTERM>;
             key-positions = <2 3>;
             bindings = <&kp TAB>;
-            layers = <SEMIMAK>;
+            layers = <SEMIMAK QWERTY>;
         };
 
         combo_copy {
             timeout-ms = <COMBOTERM>;
             key-positions = <26 27>;
             bindings = <&kp K_COPY>;
-            layers = <SEMIMAK>;
+            layers = <SEMIMAK QWERTY>;
         };
 
         combo_cut {
             timeout-ms = <COMBOTERM>;
             key-positions = <26 28>;
             bindings = <&kp K_CUT>;
-            layers = <SEMIMAK>;
+            layers = <SEMIMAK QWERTY>;
         };
 
         combo_paste {
             timeout-ms = <COMBOTERM>;
             key-positions = <27 28>;
             bindings = <&kp K_PASTE>;
-            layers = <SEMIMAK>;
+            layers = <SEMIMAK QWERTY>;
+        };
+
+        combo_semicolon {
+            timeout-ms = <COMBOTERM>;
+            key-positions = <33 34>;
+            bindings = <&kp SEMI>;
+            layers = <SEMIMAK QWERTY>;
         };
 
         combo_config_layer {
