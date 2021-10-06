@@ -191,18 +191,16 @@
 
         config_layer {
             label = "CONFIG";
-            // TODO: change base layer
-            // TODO: access config layer
 // .-----------------------------------.   .-----------------------------------.
 // |bootl|reset| USB | BLE |     |     |   |     |     |     |     |     |     |
-// |btclr| BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |     |     |     |     |
+// |btclr| BT1 | BT2 | BT3 | BT4 | BT5 |   |     | semi|qwert| game|     |     |
 // |     |     |     |     |     |     |   |     |     |     |     |     |     |
 // '-----------------\     |     |     |   |     |     |     /-----------------'
             bindings = <
-    &bootloader  &reset        &out OUT_USB  &out OUT_BLE  &none         &none         &none  &none  &none  &none  &none  &none
-    &bt BT_CLR   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5  &none  &none  &none  &none  &none  &none
-    &none        &none         &none         &none         &none         &none         &none  &none  &none  &none  &none  &none
-                                             &none         &none         &none         &none  &none  &none
+    &bootloader  &reset        &out OUT_USB  &out OUT_BLE  &none         &none         &none  &none        &none       &none     &none  &none
+    &bt BT_CLR   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5  &none  &to SEMIMAK  &to QWERTY  &to GAME  &none  &none
+    &none        &none         &none         &none         &none         &none         &none  &none        &none       &none     &none  &none
+                                             &none         &none         &none         &none  &none        &none
             >;
         };
     };
@@ -218,23 +216,30 @@
 
         combo_copy {
             timeout-ms = <COMBOTERM>;
-            key-positions = <27 28>;
+            key-positions = <26 27>;
             bindings = <&kp K_COPY>;
             layers = <SEMIMAK>;
         };
 
         combo_cut {
             timeout-ms = <COMBOTERM>;
-            key-positions = <27 29>;
+            key-positions = <26 28>;
             bindings = <&kp K_CUT>;
             layers = <SEMIMAK>;
         };
 
         combo_paste {
             timeout-ms = <COMBOTERM>;
-            key-positions = <28 29>;
+            key-positions = <27 28>;
             bindings = <&kp K_PASTE>;
             layers = <SEMIMAK>;
+        };
+
+        combo_config_layer {
+            timeout-ms = <COMBOTERM>;
+            key-positions = <36 41>;
+            bindings = <&mo CONFIG>;
+            layers = <SEMIMAK QWERTY GAME>;
         };
     };
 };
