@@ -53,11 +53,12 @@
 
         semimak_layer {
             label = "SEMI";
-// .-----------------------------------.   .-----------------------------------.
-// |     |  F  |  L  |  H  |  V  |  Z  |   |  Q  |  W  |  U  |  O  |  Y  |     |
-// |     |  S  |  R  |  N  |  T  |  K  |   |  C  |  D  |  E  |  A  |  I  |     |
-// |     |  X  |  '  |  B  |  M  |  J  |   |  P  |  G  |  ,  |  .  |  /  |     |
-// '-----------------\ RET | SPC | BSP |   | SFT | REP | ESC /-----------------'
+// ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
+// │     │  F  │  L  │  H  │  V  │  Z  │   │  Q  │  W  │  U  │  O  │  Y  │     │
+// │     │  S  │  R  │  N  │  T  │  K  │   │  C  │  D  │  E  │  A  │  I  │     │
+// │     │  X  │  '  │  B  │  M  │  J  │   │  P  │  G  │  ,  │  .  │  /  │     │
+// ╰─────┴─────┴─────┤ RET │ SPC │ BSP │   │ SFT │ REP │ ESC ├─────┴─────┴─────╯
+//                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
             bindings = <
     &none  &kp F       &kp L          &kp H          &kp V        &kp Z            &kp Q     &kp W          &kp U      &kp O    &kp Y     &none
     &none  &hm LGUI S  &hm LCTRL R    &hm LSHFT N    &hm LALT T   &kp K            &kp C     &hm LALT D     &hm LSHFT E  &hm LCTRL A  &hm LGUI I  &none
@@ -68,11 +69,12 @@
 
         qwerty_layer {
             label = "QWERTY";
-// .-----------------------------------.   .-----------------------------------.
-// |     |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |     |
-// |     |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  '  |     |
-// |     |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |     |
-// '-----------------\ RET | SPC | BSP |   | SFT | REP | ESC /-----------------'
+// ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
+// │     │  Q  │  W  │  E  │  R  │  T  │   │  Y  │  U  │  I  │  O  │  P  │     │
+// │     │  A  │  S  │  D  │  F  │  G  │   │  H  │  J  │  K  │  L  │  '  │     │
+// │     │  Z  │  X  │  C  │  V  │  B  │   │  N  │  M  │  ,  │  .  │  /  │     │
+// ╰─────┴─────┴─────┤ RET │ SPC │ BSP │   │ SFT │ REP │ ESC ├─────┴─────┴─────╯
+//                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
             bindings = <
     &none  &kp Q       &kp W          &kp E          &kp R        &kp T            &kp Y     &kp U          &kp I        &kp O        &kp P         &none
     &none  &hm LGUI A  &hm LCTRL S    &hm LSHFT D    &hm LALT F   &kp G            &kp H     &hm LALT J     &hm LSHFT K  &hm LCTRL L  &hm LGUI SQT  &none
@@ -83,11 +85,12 @@
 
         game_layer {
             label = "GAME";
-// .-----------------------------------.   .-----------------------------------.
-// |     |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |     |
-// |     |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  '  |     |
-// |     |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |     |
-// '-----------------\ RET | SPC | BSP |   | SFT | REP | ESC /-----------------'
+// ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
+// │     │  Q  │  W  │  E  │  R  │  T  │   │  Y  │  U  │  I  │  O  │  P  │     │
+// │     │  A  │  S  │  D  │  F  │  G  │   │  H  │  J  │  K  │  L  │  '  │     │
+// │     │  Z  │  X  │  C  │  V  │  B  │   │  N  │  M  │  ,  │  .  │  /  │     │
+// ╰─────┴─────┴─────┤ RET │ SPC │ BSP │   │ SFT │ REP │ ESC ├─────┴─────┴─────╯
+//                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
             bindings = <
     &kp ESC    &kp Q  &kp W    &kp E      &kp R      &kp T      &kp Y     &kp U   &kp I      &kp O    &kp P     &none
     &kp LSHFT  &kp A  &kp S    &kp D      &kp F      &kp G      &kp H     &kp J   &kp K      &kp L    &kp SQT   &none
@@ -98,11 +101,12 @@
 
         nums_layer {
             label = "NUMS";
-// .-----------------------------------.   .-----------------------------------.
-// |     |  *  |  7  |  8  |  9  |     |   |     |     |     |     |     |     |
-// |     |  0  |  4  |  5  |  6  |  %  |   |     | ALT | SHFT| CTRL| GUI |     |
-// |     |  +  |  1  |  2  |  3  |  $  |   |     |     |     |     |  /  |     |
-// '-----------------\  |  |  -  |  .  |   |     |     |     /-----------------'
+// ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
+// │     │  *  │  7  │  8  │  9  │     │   │     │     │     │     │     │     │
+// │     │  0  │  4  │  5  │  6  │  %  │   │     │ ALT │ SHFT│ CTRL│ GUI │     │
+// │     │  +  │  1  │  2  │  3  │  $  │   │     │     │     │     │  /  │     │
+// ╰─────┴─────┴─────┤  │  │  -  │  .  │   │     │     │     ├─────┴─────┴─────╯
+//                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
             bindings = <
     &none  &kp STAR  &kp 7  &kp 8  &kp 9      &none        &none  &none     &none      &none      &none     &none
     &none  &kp 0     &kp 4  &kp 5  &kp 6      &kp PERCENT  &none  &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &none
@@ -113,11 +117,12 @@
 
         syms_layer {
             label = "SYMS";
-// .-----------------------------------.   .-----------------------------------.
-// |     |  ~  |  ^  |  #  |  [  |  ]  |   |     |     |     |     |     |     |
-// |     |  :  |  ?  |  !  |  (  |  )  |   |     | ALT | SHFT| CTRL| GUI |     |
-// |     |  `  |  &  |  =  |  {  |  }  |   |     |     |     |     |     |     |
-// '-----------------\  \  |  _  |  @  |   |     |     |     /-----------------'
+// ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
+// │     │  ~  │  ^  │  #  │  [  │  ]  │   │     │     │     │     │     │     │
+// │     │  :  │  ?  │  !  │  (  │  )  │   │     │ ALT │ SHFT│ CTRL│ GUI │     │
+// │     │  `  │  &  │  =  │  {  │  }  │   │     │     │     │     │     │     │
+// ╰─────┴─────┴─────┤  \  │  _  │  @  │   │     │     │     ├─────┴─────┴─────╯
+//                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
             bindings = <
     &none  &kp TILDE  &kp CARET  &kp HASH   &kp LBKT   &kp RBKT  &none  &none     &none      &none      &none     &none
     &none  &kp COLON  &kp QMARK  &kp EXCL   &kp LPAR   &kp RPAR  &none  &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &none
@@ -128,11 +133,12 @@
 
         fkeys_layer {
             label = "FKEYS";
-// .-----------------------------------.   .-----------------------------------.
-// |     | F10 |  F7 |  F8 |  F9 |insrt|   |     |     |     |     |     |     |
-// |     | F11 |  F4 |  F5 |  F6 |prtsc|   |     | ALT | SHFT| CTRL| GUI |     |
-// |     | F12 |  F1 |  F2 |  F3 |scrlk|   |     |     |     |     |     |     |
-// '-----------------\     | caps|pause|   |     |     |     /-----------------'
+// ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
+// │     │ F10 │  F7 │  F8 │  F9 │insrt│   │     │     │     │     │     │     │
+// │     │ F11 │  F4 │  F5 │  F6 │prtsc│   │     │ ALT │ SHFT│ CTRL│ GUI │     │
+// │     │ F12 │  F1 │  F2 │  F3 │scrlk│   │     │     │     │     │     │     │
+// ╰─────┴─────┴─────┤     │ caps│pause│   │     │     │     ├─────┴─────┴─────╯
+//                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
             bindings = <
     &none  &kp F10  &kp F7  &kp F8  &kp F9    &kp INS          &none  &none     &none      &none      &none     &none
     &none  &kp F11  &kp F4  &kp F5  &kp F6    &kp PSCRN        &none  &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &none
@@ -143,11 +149,12 @@
 
         nav_layer {
             label = "NAV";
-// .-----------------------------------.   .-----------------------------------.
-// |     |     |     |     |     |     |   |     |     |     |     |     |     |
-// |     | GUI | CTRL| SHFT| ALT |     |   | LEFT| DOWN|  UP |RIGHT|     |     |
-// |     |     |     |     |     |     |   |     | pgup| pgdn| home| end |     |
-// '-----------------\     |     |     |   |     |     |     /-----------------'
+// ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
+// │     │     │     │     │     │     │   │     │     │     │     │     │     │
+// │     │ GUI │ CTRL│ SHFT│ ALT │     │   │ LEFT│ DOWN│  UP │RIGHT│     │     │
+// │     │     │     │     │     │     │   │     │ pgup│ pgdn│ home│ end │     │
+// ╰─────┴─────┴─────┤     │     │     │   │     │     │     ├─────┴─────┴─────╯
+//                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
             bindings = <
     &none  &none     &none      &none      &none     &none  &none     &none     &none   &none      &none  &none
     &none  &kp LGUI  &kp LCTRL  &kp LSHFT  &kp LALT  &none  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none  &none
@@ -158,11 +165,12 @@
 
         media_layer {
             label = "MEDIA";
-// .-----------------------------------.   .-----------------------------------.
-// |     |     |     |     |     |     |   |     |     |     |     |     |     |
-// |     | GUI | CTRL| SHFT| ALT |     |   | prev|voldn|volup| next|     |     |
-// |     |     |     |     |     |     |   |     |     |     |     |     |     |
-// '-----------------\     |     |     |   | mute| play|     /-----------------'
+// ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
+// │     │     │     │     │     │     │   │     │     │     │     │     │     │
+// │     │ GUI │ CTRL│ SHFT│ ALT │     │   │ prev│voldn│volup│ next│     │     │
+// │     │     │     │     │     │     │   │     │     │     │     │     │     │
+// ╰─────┴─────┴─────┤     │     │     │   │ mute│ play│     ├─────┴─────┴─────╯
+//                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
             bindings = <
     &none  &none     &none      &none      &none     &none  &none       &none             &none         &none       &none  &none
     &none  &kp LGUI  &kp LCTRL  &kp LSHFT  &kp LALT  &none  &kp K_PREV  &kp K_VOL_DN      &kp K_VOL_UP  &kp K_NEXT  &none  &none
@@ -173,11 +181,12 @@
 
         gnums_layer {
             label = "GNUMS";
-// .-----------------------------------.   .-----------------------------------.
-// |     |     |     |     |     |     |   |     |     |     |     |     |     |
-// |  1  |  2  |  3  |  4  |  5  |     |   |     |     |     |     |     |     |
-// |  6  |  7  |  8  |  9  |  0  |     |   |     |     |     |     |     |     |
-// '-----------------\     |     |     |   |     |     |     /-----------------'
+// ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
+// │     │     │     │     │     │     │   │     │     │     │     │     │     │
+// │  1  │  2  │  3  │  4  │  5  │     │   │     │     │     │     │     │     │
+// │  6  │  7  │  8  │  9  │  0  │     │   │     │     │     │     │     │     │
+// ╰─────┴─────┴─────┤     │     │     │   │     │     │     ├─────┴─────┴─────╯
+//                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
             bindings = <
     &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
     &kp 1  &kp 2  &kp 3  &kp 4  &kp 5  &none  &none  &none  &none  &none  &none  &none
@@ -188,11 +197,12 @@
 
         config_layer {
             label = "CONFIG";
-// .-----------------------------------.   .-----------------------------------.
-// |bootl|reset| USB | BLE |     |     |   |     |     |     |     |     |     |
-// |btclr| BT1 | BT2 | BT3 | BT4 | BT5 |   |     | semi|qwert| game|     |     |
-// |     |     |     |     |     |     |   |     |     |     |     |     |     |
-// '-----------------\     |     |     |   |     |     |     /-----------------'
+// ╭─────┬─────┬─────┬─────┬─────┬─────╮   ╭─────┬─────┬─────┬─────┬─────┬─────╮
+// │bootl│reset│ USB │ BLE │     │     │   │     │     │     │     │     │     │
+// │btclr│ BT1 │ BT2 │ BT3 │ BT4 │ BT5 │   │     │ semi│qwert│ game│     │     │
+// │     │     │     │     │     │     │   │     │     │     │     │     │     │
+// ╰─────┴─────┴─────┤     │     │     │   │     │     │     ├─────┴─────┴─────╯
+//                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
             bindings = <
     &bootloader  &reset        &out OUT_USB  &out OUT_BLE  &none         &none         &none  &none        &none       &none     &none  &none
     &bt BT_CLR   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5  &none  &to SEMIMAK  &to QWERTY  &to GAME  &none  &none
