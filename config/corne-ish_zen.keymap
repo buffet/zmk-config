@@ -111,7 +111,7 @@
     &none  &kp STAR  &kp 7  &kp 8  &kp 9      &none        &none  &none     &none      &none      &none     &none
     &none  &kp 0     &kp 4  &kp 5  &kp 6      &kp PERCENT  &none  &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &none
     &none  &kp PLUS  &kp 1  &kp 2  &kp 3      &kp DOLLAR   &none  &none     &none      &none      &kp FSLH  &none
-                         &kp PIPE  &kp MINUS  &kp DOT      &none  &none     &none
+                         &kp PIPE  &kp MINUS  &kp DOT      &none  &trans    &none
             >;
         };
 
@@ -124,10 +124,10 @@
 // ╰─────┴─────┴─────┤  \  │  _  │  @  │   │     │     │     ├─────┴─────┴─────╯
 //                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
             bindings = <
-    &none  &kp TILDE  &kp CARET  &kp HASH   &kp LBKT   &kp RBKT  &none  &none     &none      &none      &none     &none
-    &none  &kp COLON  &kp QMARK  &kp EXCL   &kp LPAR   &kp RPAR  &none  &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &none
-    &none  &kp GRAVE  &kp AMPS   &kp EQUAL  &kp LBRC   &kp RBRC  &none  &none     &none      &none      &none     &none
-                                 &kp BSLH   &kp UNDER  &kp AT    &none  &none     &none
+    &none  &kp TILDE  &kp CARET  &kp HASH   &kp LBKT   &kp RBKT  &none   &none     &none      &none      &none     &none
+    &none  &kp COLON  &kp QMARK  &kp EXCL   &kp LPAR   &kp RPAR  &none   &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &none
+    &none  &kp GRAVE  &kp AMPS   &kp EQUAL  &kp LBRC   &kp RBRC  &none   &none     &none      &none      &none     &none
+                                 &kp BSLH   &kp UNDER  &kp AT    &trans  &none     &none
             >;
         };
 
@@ -143,7 +143,7 @@
     &none  &kp F10  &kp F7  &kp F8  &kp F9    &kp INS          &none  &none     &none      &none      &none     &none
     &none  &kp F11  &kp F4  &kp F5  &kp F6    &kp PSCRN        &none  &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &none
     &none  &kp F12  &kp F1  &kp F2  &kp F3    &kp SLCK         &none  &none     &none      &none      &none     &none
-                            &none   &kp CAPS  &kp PAUSE_BREAK  &none  &none     &none
+                            &none   &kp CAPS  &kp PAUSE_BREAK  &none  &none     &trans
             >;
         };
 
@@ -159,7 +159,7 @@
     &none  &none     &none      &none      &none     &none  &none     &none     &none   &none      &none  &none
     &none  &kp LGUI  &kp LCTRL  &kp LSHFT  &kp LALT  &none  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none  &none
     &none  &none     &none      &none      &none     &none  &none     &none     &none   &none      &none  &none
-                                &none      &none     &none  &none     &none     &none
+                                &none      &trans    &none  &none     &none     &none
             >;
         };
 
@@ -175,7 +175,7 @@
     &none  &none     &none      &none      &none     &none  &none       &none             &none         &none       &none  &none
     &none  &kp LGUI  &kp LCTRL  &kp LSHFT  &kp LALT  &none  &kp K_PREV  &kp K_VOL_DN      &kp K_VOL_UP  &kp K_NEXT  &none  &none
     &none  &none     &none      &none      &none     &none  &none       &none             &none         &none       &none  &none
-                                &none      &none     &none  &kp K_MUTE  &kp K_PLAY_PAUSE  &none
+                                &trans     &none     &none  &kp K_MUTE  &kp K_PLAY_PAUSE  &none
             >;
         };
 
@@ -188,10 +188,10 @@
 // ╰─────┴─────┴─────┤     │     │     │   │     │     │     ├─────┴─────┴─────╯
 //                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
             bindings = <
-    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-    &kp 1  &kp 2  &kp 3  &kp 4  &kp 5  &none  &none  &none  &none  &none  &none  &none
-    &kp 6  &kp 7  &kp 8  &kp 9  &kp 0  &none  &none  &none  &none  &none  &none  &none
-                         &none  &none  &none  &none  &none  &none
+    &none  &none  &none  &none  &none  &none   &none  &none  &none  &none  &none  &none
+    &kp 1  &kp 2  &kp 3  &kp 4  &kp 5  &none   &none  &none  &none  &none  &none  &none
+    &kp 6  &kp 7  &kp 8  &kp 9  &kp 0  &none   &none  &none  &none  &none  &none  &none
+                         &none  &none  &trans  &none  &none  &none
             >;
         };
 
@@ -207,7 +207,7 @@
     &bootloader  &reset        &out OUT_USB  &out OUT_BLE  &none         &none         &none  &none        &none       &none     &none  &none
     &bt BT_CLR   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5  &none  &to SEMIMAK  &to QWERTY  &to GAME  &none  &none
     &none        &none         &none         &none         &none         &none         &none  &none        &none       &none     &none  &none
-                                             &none         &none         &none         &none  &none        &none
+                                             &trans        &none         &none         &none  &none        &trans
             >;
         };
     };
