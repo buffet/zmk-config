@@ -173,9 +173,9 @@
 //                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
             bindings = <
     &none  &none     &none      &none      &none     &none  &none       &none             &none         &none       &none  &none
-    &none  &kp LGUI  &kp LCTRL  &kp LSHFT  &kp LALT  &none  &kp K_PREV  &kp K_VOL_DN      &kp K_VOL_UP  &kp K_NEXT  &none  &none
+    &none  &kp LGUI  &kp LCTRL  &kp LSHFT  &kp LALT  &none  &kp C_PREV  &kp C_VOL_DN      &kp C_VOL_UP  &kp C_NEXT  &none  &none
     &none  &none     &none      &none      &none     &none  &none       &none             &none         &none       &none  &none
-                                &trans     &none     &none  &kp K_MUTE  &kp K_PLAY_PAUSE  &none
+                                &trans     &none     &none  &kp C_MUTE  &kp C_PLAY_PAUSE  &none
             >;
         };
 
@@ -205,7 +205,7 @@
 //                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
             bindings = <
     &bootloader  &reset        &out OUT_USB  &out OUT_BLE  &none         &none         &none  &none        &none       &none     &none  &none
-    &bt BT_CLR   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5  &none  &to SEMIMAK  &to QWERTY  &to GAME  &none  &none
+    &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none  &to SEMIMAK  &to QWERTY  &to GAME  &none  &none
     &none        &none         &none         &none         &none         &none         &none  &none        &none       &none     &none  &none
                                              &trans        &none         &none         &none  &none        &trans
             >;
@@ -224,27 +224,27 @@
         combo_copy {
             timeout-ms = <COMBOTERM>;
             key-positions = <26 27>;
-            bindings = <&kp K_COPY>;
+            bindings = <&kp C_AC_COPY>;
             layers = <SEMIMAK QWERTY>;
         };
 
         combo_cut {
             timeout-ms = <COMBOTERM>;
             key-positions = <26 28>;
-            bindings = <&kp K_CUT>;
+            bindings = <&kp C_AC_CUT>;
             layers = <SEMIMAK QWERTY>;
         };
 
         combo_paste {
             timeout-ms = <COMBOTERM>;
             key-positions = <27 28>;
-            bindings = <&kp K_PASTE>;
+            bindings = <&kp C_AC_PASTE>;
             layers = <SEMIMAK QWERTY>;
         };
 
         combo_semicolon {
             timeout-ms = <COMBOTERM>;
-            key-positions = <33 34>;
+            key-positions = <32 33>;
             bindings = <&kp SEMI>;
             layers = <SEMIMAK QWERTY>;
         };
