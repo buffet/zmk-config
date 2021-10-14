@@ -60,9 +60,9 @@
 // ╰─────┴─────┴─────┤ RET │ SPC │ BSP │   │ SFT │ REP │ ESC ├─────┴─────┴─────╯
 //                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
             bindings = <
-    &none  &kp F       &kp L          &kp H          &kp V        &kp Z            &kp Q     &kp W          &kp U      &kp O    &kp Y     &none
+    &none  &kp F       &kp L          &kp H          &kp V        &kp Z            &kp Q     &kp W          &kp U        &kp O        &kp Y       &none
     &none  &hm LGUI S  &hm LCTRL R    &hm LSHFT N    &hm LALT T   &kp K            &kp C     &hm LALT D     &hm LSHFT E  &hm LCTRL A  &hm LGUI I  &none
-    &none  &kp X       &kp SQT        &kp B          &kp M        &kp J            &kp P     &kp G          &kp COMMA  &kp DOT  &kp FSLH  &none
+    &none  &kp X       &kp SQT        &kp B          &kp M        &kp J            &kp P     &kp G          &kp COMMA    &kp DOT      &kp FSLH    &none
                        &lt MEDIA RET  &lt NAV SPACE  &kp BSPC     &lst SYMS LSHFT  &mo NUMS  &lt FKEYS ESC
             >;
         };
