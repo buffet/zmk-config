@@ -13,6 +13,7 @@
 #define TAPTERM 200
 #define TAPHOLDFLAVOR "tap-preferred"
 #define COMBOTERM 22
+#define COMBOTERM_CONFIG 40
 
 #define SEMIMAK  0
 #define QWERTY   1
@@ -251,7 +252,7 @@
         };
 
         combo_config_layer {
-            timeout-ms = <COMBOTERM>;
+            timeout-ms = <COMBOTERM_CONFIG>;
             key-positions = <36 41>;
             bindings = <&mo CONFIG>;
             layers = <SEMIMAK QWERTY GAME>;
