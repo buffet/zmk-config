@@ -26,6 +26,10 @@
 #define GNUMS    8
 #define CONFIG   9
 
+&sk {
+    quick-release;
+};
+
 / {
     behaviors {
         lst: layer_sticky_tap {
