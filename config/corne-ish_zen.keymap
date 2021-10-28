@@ -13,7 +13,10 @@
 #define TAPTERM 200
 #define TAPHOLDFLAVOR "tap-preferred"
 #define COMBOTERM 22
-#define COMBOTERM_CONFIG 40
+#define COMBOTERM_LONG 40
+
+#define COMBO(name, to, pos, bind, ls) combo_##name { timeout-ms = <to>; key-positions = pos; bindings = bind; layers = ls; }
+#define QCOMBO(name, pos, bind) COMBO(name, COMBOTERM, pos, bind, <SEMIMAK QWERTY>)
 
 #define SEMIMAK  0
 #define QWERTY   1
@@ -220,46 +223,12 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_tab {
-            timeout-ms = <COMBOTERM>;
-            key-positions = <2 3>;
-            bindings = <&kp TAB>;
-            layers = <SEMIMAK QWERTY>;
-        };
+        QCOMBO(tab,   <2 3>,   <&kp TAB>);
+        QCOMBO(copy,  <26 27>, <&kp LC(C)>);
+        QCOMBO(cut,   <26 28>, <&kp LC(X)>);
+        QCOMBO(paste, <27 28>, <&kp LC(V)>);
+        QCOMBO(semi,  <32 33>, <&kp SEMI>);
 
-        combo_copy {
-            timeout-ms = <COMBOTERM>;
-            key-positions = <26 27>;
-            bindings = <&kp LC(C)>;
-            layers = <SEMIMAK QWERTY>;
-        };
-
-        combo_cut {
-            timeout-ms = <COMBOTERM>;
-            key-positions = <26 28>;
-            bindings = <&kp LC(X)>;
-            layers = <SEMIMAK QWERTY>;
-        };
-
-        combo_paste {
-            timeout-ms = <COMBOTERM>;
-            key-positions = <27 28>;
-            bindings = <&kp LC(V)>;
-            layers = <SEMIMAK QWERTY>;
-        };
-
-        combo_semicolon {
-            timeout-ms = <COMBOTERM>;
-            key-positions = <32 33>;
-            bindings = <&kp SEMI>;
-            layers = <SEMIMAK QWERTY>;
-        };
-
-        combo_config_layer {
-            timeout-ms = <COMBOTERM_CONFIG>;
-            key-positions = <36 41>;
-            bindings = <&mo CONFIG>;
-            layers = <SEMIMAK QWERTY GAME>;
-        };
+        COMBO(config, COMBOTERM_LONG, <36 41>, <&mo CONFIG>, <SEMIMAK QWERTY QWERTY>);
     };
 };
