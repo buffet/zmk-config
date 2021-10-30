@@ -229,6 +229,6 @@
         QCOMBO(paste, <27 28>, <&kp LC(V)>);
         QCOMBO(semi,  <32 33>, <&kp SEMI>);
 
-        COMBO(config, COMBOTERM_LONG, <36 41>, <&mo CONFIG>, <SEMIMAK QWERTY QWERTY>);
+        COMBO(config, COMBOTERM_LONG, <36 41>, <&mo CONFIG>, <SEMIMAK QWERTY GAME>);
     };
 };
