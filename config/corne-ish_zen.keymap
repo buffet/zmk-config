@@ -65,7 +65,7 @@
 // │     │  F  │  L  │  H  │  V  │  Z  │   │  Q  │  W  │  U  │  O  │  Y  │     │
 // │     │  S  │  R  │  N  │  T  │  K  │   │  C  │  D  │  E  │  A  │  I  │     │
 // │     │  X  │  '  │  B  │  M  │  J  │   │  P  │  G  │  ,  │  .  │  /  │     │
-// ╰─────┴─────┴─────┤ RET │ SPC │ BSP │   │ SFT │ REP │ ESC ├─────┴─────┴─────╯
+// ╰─────┴─────┴─────┤ RET │ SPC │ BSP │   │ SFT │ NUM │ ESC ├─────┴─────┴─────╯
 //                   ╰─────┴─────┴─────╯   ╰─────┴─────┴─────╯
             bindings = <
     &none  &kp F       &kp L          &kp H          &kp V        &kp Z            &kp Q     &kp W          &kp U        &kp O        &kp Y       &none
